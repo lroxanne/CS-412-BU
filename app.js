@@ -2,6 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const ps4Router = require('./ps4');
+const redis = require('redis');
+const redisClient = redis.createClient({
+  legacyMode: true,
+  url: 'redis://127.0.0.1:6379' // Use IPv4 address
+});
+redisClient.connect().catch(console.error);
+
 
 const app = express();
 
