@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Results</title>
+</head>
+<body>
+  <h1>Weather Data</h1>
+  <% if (weather && weather.current) { %>
+    <p>Temperature: <%= weather.current.temperature %>°</p>
+    <p>Weather Descriptions: <%= weather.current.weather_descriptions.join(', ') %></p>
+    <p>Wind Speed: <%= weather.current.wind_speed %> km/h</p>
+    <p>Pressure: <%= weather.current.pressure %> mb</p>
+    <!-- Add more fields as needed -->
+  <% } else { %>
+    <p>No weather data available.</p>
+  <% } %>
+  <a href="/">Back to form</a>
+</body>
+</html>
